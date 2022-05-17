@@ -27,9 +27,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css",
+              "src/assets/bootstrap/css/bootstrap.min.css",
+              "./node_modules/aos/dist/aos.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/bootstrap/js/bootstrap.min.js",
+              "src/assets/js/bs-init.js",
+              "src/assets/js/grayscale.js",
+              "./node_modules/aos/dist/aos.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -96,7 +104,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+
+            ]
           }
         }
       }

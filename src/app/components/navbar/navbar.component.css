@@ -1,0 +1,53 @@
+@media (min-width: 992px){
+  #mainNav.navbar-shrink {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,.3);
+    background: #000;
+  }
+  #mainNav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: background .3s ease-in-out,padding-top .3s ease-in-out,padding-bottom .3s;
+    letter-spacing: 1px;
+    border-bottom: none;
+    background: transparent;
+  }
+
+}
+
+
+#mainNav {
+  font-family: "Cabin","Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,.3);
+  background-color: #000;
+}
+
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+@media (min-width: 768px) {
+  .navbar-expand-md {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
