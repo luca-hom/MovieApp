@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {NPResult, NPDates, NPRootObject} from "../models/nowPlaying"
+import {Result, Dates, RootObject} from "../models/response"
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 
 import * as data from 'src/assets/api-key.json';
@@ -22,13 +22,27 @@ export class MovieService {
 
 
 
-  getCurrentlyInTheatre(): Observable<Array<NPRootObject>> {
+  getCurrentlyInTheatre(): Observable<Array<RootObject>> {
     let apiKey = data;
     let url = encodeURI(this.apiUrl + '/movie/now_playing' + '?api_key='+apiKey.key + '&region=US' + '&page=1')
-    console.log(url);
-
-    return this.http.get<Array<NPRootObject>>(url);
+    return this.http.get<Array<RootObject>>(url);
     }
+
+    getTopRated(): Observable<Array<RootObject>> {
+    let apiKey = data;
+    let url = encodeURI(this.apiUrl+'/movie/top_rated' + '?api_key='+apiKey.key + '&page=1')
+      return this.http.get<Array<RootObject>>(url);
+    }
+
+  getMostPopular(): Observable<Array<RootObject>> {
+    let apiKey = data;
+    let url = encodeURI(this.apiUrl+'/movie/popular' + '?api_key='+apiKey.key + '&page=1')
+    return this.http.get<Array<RootObject>>(url);
+  }
+
+
+
+
 
 
   }

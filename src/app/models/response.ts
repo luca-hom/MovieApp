@@ -1,4 +1,4 @@
-export interface NPResult {
+export interface Result {
   poster_path: string;
   adult: boolean;
   overview: string;
@@ -15,15 +15,15 @@ export interface NPResult {
   vote_average: number;
 }
 
-export interface NPDates {
+export interface Dates {
   maximum: string;
   minimum: string;
 }
 
-export interface NPRootObject {
+export interface RootObject {
   page: number;
-  results: NPResult[];
-  dates: NPDates;
+  results: Result[];
+  dates: Dates;
   total_pages: number;
   total_results: number;
 }

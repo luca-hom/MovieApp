@@ -10,6 +10,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeComponent } from './components/home/home.component';
+import { TopRatedComponent } from './components/top-rated/top-rated.component';
+import { MostPopularComponent } from './components/most-popular/most-popular.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { HomeComponent } from './components/home/home.component';
     PageNotFoundComponent,
     NavbarComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    TopRatedComponent,
+    MostPopularComponent
   ],
   imports: [
     BrowserModule,

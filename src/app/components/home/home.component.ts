@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {MovieService} from "../../services/movie.service";
-import {NPResult, NPRootObject} from "../../models/nowPlaying";
+import {Result, RootObject} from "../../models/response";
 
 @Component({
   selector: 'app-home',
@@ -10,7 +10,7 @@ import {NPResult, NPRootObject} from "../../models/nowPlaying";
 })
 export class HomeComponent implements OnInit {
 
-  allMovies: NPResult[] | undefined;
+  allMovies: Result[] | undefined;
 
 
   constructor(private movieService : MovieService) {
