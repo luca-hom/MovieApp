@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Result, Dates, RootObject} from "../models/response"
+import {Genre} from "../models/genreList";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 
 import * as data from 'src/assets/api-key.json';
@@ -21,10 +22,9 @@ export class MovieService {
   }
 
 
-
   getCurrentlyInTheatre(): Observable<Array<RootObject>> {
     let apiKey = data;
-    let url = encodeURI(this.apiUrl + '/movie/now_playing' + '?api_key='+apiKey.key + '&region=US' + '&page=1')
+    let url = encodeURI(this.apiUrl + '/movie/now_playing' + '?api_key='+apiKey.key + '&region=DE' + '&page=1')
     return this.http.get<Array<RootObject>>(url);
     }
 
@@ -39,6 +39,20 @@ export class MovieService {
     let url = encodeURI(this.apiUrl+'/movie/popular' + '?api_key='+apiKey.key + '&page=1')
     return this.http.get<Array<RootObject>>(url);
   }
+
+  getGenres(genres: String[]): Observable<Array<RootObject>> {
+    let apiKey = data;
+    let url = encodeURI(this.apiUrl+'/discover/movie' + '?api_key='+apiKey.key + '&with_genres=' + genres + '&page=1');
+    return this.http.get<Array<RootObject>>(url);
+  }
+
+  getGenreList(): Observable<Array<Genre>> {
+    let apiKey = data;
+    let url = encodeURI(this.apiUrl+'/genre/movie/list'+ '?api_key='+apiKey.key);
+    return this.http.get<Array<Genre>>(url);
+  }
+
+
 
 
 

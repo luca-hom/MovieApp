@@ -1,0 +1,27 @@
+<header class="masthead" style="background: url('assets/img/movie-theatre.jpg'), transparent;background-size: cover, auto;padding-top: 75px;">
+  <div class="container">
+    <h1>Genres</h1>
+    <label for="dropdown">Search for a genre:</label>
+    <div class="dropdown">
+
+      <ng-multiselect-dropdown id="dropdown"
+                               [placeholder]="'Genre...'"
+                               [settings]="dropdownSettings"
+                               [data]="dropdownList"
+                               [(ngModel)]="selectedItems"
+
+      >
+      </ng-multiselect-dropdown>
+    </div>
+
+
+    <button type="button" class="btn btn-primary" (click)="fetchGenres();" >Search...</button>
+    <div class="row">
+
+      <ng-container *ngFor="let movie of allMovies">
+        <div class="col-md-3"><img class="img-fluid" src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}"></div>
+      </ng-container>
+
+    </div>
+  </div>
+</header>

@@ -12,6 +12,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeComponent } from './components/home/home.component';
 import { TopRatedComponent } from './components/top-rated/top-rated.component';
 import { MostPopularComponent } from './components/most-popular/most-popular.component';
+import { GenresComponent } from './components/genres/genres.component';
+import {FormsModule} from "@angular/forms";
+import {NgMultiSelectDropDownModule} from "ng-multiselect-dropdown";
 
 @NgModule({
   declarations: [
@@ -21,15 +24,18 @@ import { MostPopularComponent } from './components/most-popular/most-popular.com
     FooterComponent,
     HomeComponent,
     TopRatedComponent,
-    MostPopularComponent
+    MostPopularComponent,
+    GenresComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,
-    FontAwesomeModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgbModule,
+        FontAwesomeModule,
+        HttpClientModule,
+        FormsModule,
+        NgMultiSelectDropDownModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
