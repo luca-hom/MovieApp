@@ -5,12 +5,14 @@ import {HomeComponent} from "./components/home/home.component";
 import {TopRatedComponent} from "./components/top-rated/top-rated.component";
 import {MostPopularComponent} from "./components/most-popular/most-popular.component";
 import {GenresComponent} from "./components/genres/genres.component";
+import {SearchComponent} from "./components/search/search.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'top-rated', component: TopRatedComponent},
   { path: 'most-popular', component: MostPopularComponent},
   { path: 'genres', component: GenresComponent},
+  { path: 'search', component: SearchComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];

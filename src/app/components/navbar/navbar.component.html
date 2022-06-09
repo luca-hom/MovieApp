@@ -5,7 +5,7 @@
         <li class="nav-item nav-link"><a class="nav-link" href="top-rated">Top Rated</a></li>
         <li class="nav-item nav-link"><a class="nav-link" href="most-popular">Most Popular</a></li>
         <li class="nav-item nav-link"><a class="nav-link" href="genres">Genres</a></li>
-        <li class="nav-item nav-link"><input type="search" style="border-radius: 30px;border-width: 3px;border-style: solid;" placeholder="Search..."></li>
+        <li class="nav-item nav-link"><input type="search" style="border-radius: 30px;border-width: 3px;border-style: solid;" placeholder="Search..." (keyup.enter)="onEnterSearch()" [(ngModel)]="searchQuery"></li>
       </ul>
     </div>
   </div>

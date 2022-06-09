@@ -52,6 +52,12 @@ export class MovieService {
     return this.http.get<Array<Genre>>(url);
   }
 
+  getSearch(query: string): Observable<Array<RootObject>> {
+    let apiKey = data;
+    let url = encodeURI(this.apiUrl+'/search/movie'+ '?api_key='+apiKey.key + '&query=' + query);
+    return this.http.get<Array<RootObject>>(url);
+  }
+
 
 
 

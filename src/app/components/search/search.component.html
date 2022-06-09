@@ -1,0 +1,10 @@
+<header class="masthead" style="background: url('assets/img/movie-theatre.jpg'), transparent;background-size: cover, auto;padding-top: 75px;">
+  <div class="container">
+    <h1>Search Results for:  {{searchQuery}}</h1>
+    <div class="row">
+      <ng-container *ngFor="let movie of allMovies">
+        <div class="col-md-3"><img class="img-fluid" src="https://image.tmdb.org/t/p//w500{{movie.poster_path}}"></div>
+      </ng-container>
+    </div>
+  </div>
+</header>

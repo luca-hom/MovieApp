@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import {Component, OnInit} from '@angular/core';
+import {faBars} from "@fortawesome/free-solid-svg-icons";
 import * as AOS from 'aos';
 
 @Component({
@@ -9,12 +9,21 @@ import * as AOS from 'aos';
 })
 export class NavbarComponent implements OnInit {
 
+  searchQuery = '';
   faBars = faBars;
 
   constructor() { }
 
   ngOnInit(): void {
     AOS.init();
+
+  }
+
+  onEnterSearch() {
+
+    console.log(this.searchQuery);
+    location.replace('/search?query='+ this.searchQuery);
+
 
   }
 

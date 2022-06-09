@@ -15,6 +15,7 @@ import { MostPopularComponent } from './components/most-popular/most-popular.com
 import { GenresComponent } from './components/genres/genres.component';
 import {FormsModule} from "@angular/forms";
 import {NgMultiSelectDropDownModule} from "ng-multiselect-dropdown";
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {NgMultiSelectDropDownModule} from "ng-multiselect-dropdown";
     HomeComponent,
     TopRatedComponent,
     MostPopularComponent,
-    GenresComponent
+    GenresComponent,
+    SearchComponent
   ],
     imports: [
         BrowserModule,
