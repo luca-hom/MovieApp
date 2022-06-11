@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import {MovieService} from "../../services/movie.service";
 import {Result} from "../../models/response";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-search',
@@ -13,7 +14,9 @@ export class SearchComponent implements OnInit {
   searchQuery = '';
   allMovies: Result[] | undefined;
 
-  constructor(private route: ActivatedRoute, private movieService: MovieService) { }
+  constructor(private route: ActivatedRoute,
+              private movieService: MovieService,
+              private modalService: NgbModal) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
@@ -33,6 +36,10 @@ export class SearchComponent implements OnInit {
       this.allMovies = ((valueFromJson || {}).results);
     })
 
+  }
+
+  openModal(content: any) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title', size: 'xl'})
   }
 
 }

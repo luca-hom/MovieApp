@@ -19,7 +19,25 @@
     <div class="row">
 
       <ng-container *ngFor="let movie of allMovies">
-        <div class="col-md-3"><img class="img-fluid" src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}"></div>
+        <div (click)="openModal(content)" class="col-md-3"><img class="img-fluid" src="https://image.tmdb.org/t/p//w500{{movie.poster_path}}"></div>
+
+        <ng-template #content let-modal>
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">{{movie.title}}</h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+          </div>
+          <div class="modal-body">
+            <div class="img-backdrop"><img src="https://image.tmdb.org/t/p//w500{{movie.backdrop_path}}" style="width: 100%; height: auto"></div>
+            <p>
+              <b>Description:</b><br> {{movie.overview}}<br><br>
+              <b>Release Date:</b> {{movie.release_date}}<br>
+              <b>Popularity Score:</b> {{movie.popularity}}
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save as Favourite</button>
+          </div>
+        </ng-template>
       </ng-container>
 
     </div>

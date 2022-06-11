@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {MovieService} from "../../services/movie.service";
 import {Result, RootObject} from "../../models/response";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-most-popular',
@@ -12,7 +13,8 @@ export class MostPopularComponent implements OnInit {
 
   allMovies: Result[] | undefined;
 
-  constructor(private movieService: MovieService) { }
+  constructor(private movieService: MovieService,
+              private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.fetchMostPopular();
@@ -28,6 +30,10 @@ export class MostPopularComponent implements OnInit {
       this.allMovies = ((valueFromJson || {}).results);
     })
 
+  }
+
+  openModal(content: any) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title', size: 'xl'})
   }
 
 }

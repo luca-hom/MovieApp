@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Modal CSS --> clicking on poster gives you details of movie*/
+div.modal-body {
+  color: black;
+}
+
+div.img-backdrop {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+div.modal-header {
+  color: black;
+}

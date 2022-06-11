@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 
 import {MovieService} from "../../services/movie.service";
 import {Result, RootObject} from "../../models/response";
@@ -13,7 +14,8 @@ export class TopRatedComponent implements OnInit {
   allMovies: Result[] | undefined;
 
 
-  constructor(private movieService: MovieService) { }
+  constructor(private movieService: MovieService,
+              private modalService : NgbModal) { }
 
   ngOnInit(): void {
     this.fetchAllTopRated();
@@ -30,4 +32,9 @@ export class TopRatedComponent implements OnInit {
 
   }
 
+  openModal(content: any) {
+
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title', size: 'xl'})
+
+  }
 }

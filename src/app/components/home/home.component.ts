@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {MovieService} from "../../services/movie.service";
 import {Result, RootObject} from "../../models/response";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,8 @@ export class HomeComponent implements OnInit {
   allMovies: Result[] | undefined;
 
 
-  constructor(private movieService : MovieService) {
+  constructor(private movieService : MovieService,
+              private modalService : NgbModal) {
   }
 
   ngOnInit(): void {
@@ -32,9 +34,11 @@ export class HomeComponent implements OnInit {
 
     });
 
+  }
 
+  openModal(content: any) {
 
-
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title', size: 'xl'})
 
   }
 

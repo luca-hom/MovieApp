@@ -3,6 +3,7 @@ import {Component, OnInit} from '@angular/core';
 import {MovieService} from "../../services/movie.service";
 import {Result} from "../../models/response";
 import {Genre} from "../../models/genreList";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 
 @Component({
@@ -23,7 +24,8 @@ export class GenresComponent implements OnInit {
   genreQuery: String[] = [];
 
 
-  constructor(private movieService: MovieService) {
+  constructor(private movieService: MovieService,
+              private modalService: NgbModal) {
 
   }
 
@@ -79,6 +81,10 @@ export class GenresComponent implements OnInit {
       this.dropdownList = this.genreList;
     })
 
+  }
+
+  openModal(content: any) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title', size: 'xl'})
   }
 
 }
