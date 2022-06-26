@@ -4,6 +4,8 @@ import {MovieService} from "../../services/movie.service";
 import {Result} from "../../models/response";
 import {Genre} from "../../models/genreList";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {Favourite} from "../../models/favourite";
+import {FavouriteService} from "../../services/favourite.service";
 
 
 @Component({
@@ -25,7 +27,8 @@ export class GenresComponent implements OnInit {
 
 
   constructor(private movieService: MovieService,
-              private modalService: NgbModal) {
+              private modalService: NgbModal,
+              private favouriteService: FavouriteService) {
 
   }
 
@@ -85,6 +88,11 @@ export class GenresComponent implements OnInit {
 
   openModal(content: any) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title', size: 'xl'})
+  }
+
+  saveFavourite(id: number, name: string) {
+    const newFav: Favourite = {movie_id: id, movie_name: name};
+    this.favouriteService.submitFavourite(newFav).subscribe(response => {});
   }
 
 }

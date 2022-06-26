@@ -3,7 +3,7 @@
     <h1>Top Rated Movies</h1>
     <div class="row">
       <ng-container *ngFor="let movie of allMovies">
-        <div (click)="openModal(content)" class="col-md-3"><img class="img-fluid" src="https://image.tmdb.org/t/p//w500{{movie.poster_path}}"></div>
+        <div (click)="openModal(content)" class="col-md-3" style="cursor: pointer"><img class="img-fluid" src="https://image.tmdb.org/t/p//w500{{movie.poster_path}}"></div>
 
         <ng-template #content let-modal>
           <div class="modal-header">
@@ -19,7 +19,7 @@
             </p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save as Favourite</button>
+            <button type="button" class="btn btn-outline-dark" (click)="saveFavourite(movie.id, movie.title); modal.close()">Save as Favourite</button>
           </div>
         </ng-template>
       </ng-container>

@@ -3,6 +3,8 @@ import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 
 import {MovieService} from "../../services/movie.service";
 import {Result, RootObject} from "../../models/response";
+import {Favourite} from "../../models/favourite";
+import {FavouriteService} from "../../services/favourite.service";
 
 @Component({
   selector: 'app-top-rated',
@@ -15,7 +17,8 @@ export class TopRatedComponent implements OnInit {
 
 
   constructor(private movieService: MovieService,
-              private modalService : NgbModal) { }
+              private modalService : NgbModal,
+              private favouriteService: FavouriteService) { }
 
   ngOnInit(): void {
     this.fetchAllTopRated();
@@ -36,5 +39,9 @@ export class TopRatedComponent implements OnInit {
 
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title', size: 'xl'})
 
+  }
+  saveFavourite(id: number, name: string) {
+    const newFav: Favourite = {movie_id: id, movie_name: name};
+    this.favouriteService.submitFavourite(newFav).subscribe(response => {});
   }
 }

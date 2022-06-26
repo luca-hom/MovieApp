@@ -1,0 +1,17 @@
+<header class="masthead" style="background: url('assets/img/movie-theatre.jpg'), transparent;background-size: cover, auto;padding-top: 75px;">
+<table class="table table-hover">
+    <thead class="table-dark">
+    <tr>
+      <th scope="col">Your favourites</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody class="table-light">
+    <tr *ngFor="let fav of allFavs">
+      <th scope="row">{{fav.movie_name}}</th>
+      <td><button type="button" class="btn btn-danger" (click)="removeFavourite(fav.movie_id)">delete</button> </td>
+    </tr>
+    </tbody>
+  </table>
+</header>
+

@@ -16,6 +16,7 @@ import { GenresComponent } from './components/genres/genres.component';
 import {FormsModule} from "@angular/forms";
 import {NgMultiSelectDropDownModule} from "ng-multiselect-dropdown";
 import { SearchComponent } from './components/search/search.component';
+import { FavouritesComponent } from './components/favourites/favourites.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SearchComponent } from './components/search/search.component';
     TopRatedComponent,
     MostPopularComponent,
     GenresComponent,
-    SearchComponent
+    SearchComponent,
+    FavouritesComponent
   ],
     imports: [
         BrowserModule,
