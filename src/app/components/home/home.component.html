@@ -1,5 +1,4 @@
-<header class="masthead" style="background: url('assets/img/movie-theatre.jpg'), transparent;background-size: cover, auto;padding-top: 75px;">
-    <div class="container">
+<div class="container">
       <div class="row">
         <ng-container *ngFor="let movie of allMovies">
           <div (click)="openModal(content)" class="col-md-3" style="cursor: pointer"><img class="img-fluid" src="https://image.tmdb.org/t/p//w500{{movie.poster_path}}"></div>
@@ -32,4 +31,4 @@
         </ng-container>
       </div>
     </div>
-</header>
+
