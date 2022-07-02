@@ -15,7 +15,14 @@
             <p>
               <b>Description:</b><br> {{movie.overview}}<br><br>
               <b>Release Date:</b> {{movie.release_date}}<br>
-              <b>Popularity Score:</b> {{movie.popularity}}
+
+              <ng-template #t let-fill="fill">
+                  <span class="star" [class.full]="fill === 100">
+                    <span class="half" [style.width.%]="fill">&star;</span>&star;
+                  </span>
+              </ng-template>
+
+              <ngb-rating [(rate)]="movie.vote_average" [starTemplate]="t" [readonly]="true" [max]="10"></ngb-rating>
             </p>
           </div>
           <div class="modal-footer">

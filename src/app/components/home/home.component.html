@@ -13,8 +13,16 @@
               <div class="img-backdrop"><img src="https://image.tmdb.org/t/p//w500{{movie.backdrop_path}}" style="width: 100%; height: auto"></div>
               <p>
                 <b>Description:</b><br> {{movie.overview}}<br><br>
-                <b>Release Date:</b> {{movie.release_date}}<br>
-                <b>Popularity Score:</b> {{movie.popularity}}
+                <b>Release Date: </b> {{movie.release_date}}<br>
+
+                <ng-template #t let-fill="fill">
+                  <span class="star" [class.full]="fill === 100">
+                    <span class="half" [style.width.%]="fill">&star;</span>&star;
+                  </span>
+                </ng-template>
+
+                <ngb-rating [(rate)]="movie.vote_average" [starTemplate]="t" [readonly]="true" [max]="10"></ngb-rating>
+
               </p>
             </div>
             <div class="modal-footer">
