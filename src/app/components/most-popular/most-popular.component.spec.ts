@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MostPopularComponent } from './most-popular.component';
+import {HttpClientTestingModule} from "@angular/common/http/testing";
 
 describe('MostPopularComponent', () => {
   let component: MostPopularComponent;
@@ -8,6 +9,7 @@ describe('MostPopularComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
       declarations: [ MostPopularComponent ]
     })
     .compileComponents();

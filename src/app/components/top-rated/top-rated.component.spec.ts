@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TopRatedComponent } from './top-rated.component';
+import {HttpClientTestingModule} from "@angular/common/http/testing";
 
 describe('TopRatedComponent', () => {
   let component: TopRatedComponent;
@@ -8,7 +9,8 @@ describe('TopRatedComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TopRatedComponent ]
+      imports: [HttpClientTestingModule],
+      declarations: [TopRatedComponent]
     })
     .compileComponents();
   });
