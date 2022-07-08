@@ -32,7 +32,7 @@ export class FavouriteService {
   }
 
   deleteFavourite(id: number) {
-    let url = encodeURI(this.apiUrl + 'favourites/' + id);
+    let url = encodeURI(this.apiUrl + 'favourite/' + id);
     return this.http.delete(url);
   }
 
